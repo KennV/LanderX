@@ -1,10 +1,10 @@
-//
-//  AppDelegate.m
-//  LanderX
-//
-//  Created by Kenn Villegas on 12/12/17.
-//  Copyright © 2017 dubian. All rights reserved.
-//
+/**
+  AppDelegate.m
+  LanderX
+
+  Created by Kenn Villegas on 12/12/17.
+  Copyright © 2017 dubian. All rights reserved.
+*/
 
 #import "AppDelegate.h"
 #import "KDVMapDetailViewController.h"
@@ -26,7 +26,7 @@
 
   UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
   KDVPrimeTVController *controller = (KDVPrimeTVController *)masterNavigationController.topViewController;
-  controller.managedObjectContext = self.persistentContainer.viewContext;
+  controller.managedObjectContext = self.PSK.viewContext;
   return YES;
 }
 
@@ -73,14 +73,41 @@
 
 #pragma mark - Core Data stack
 
-@synthesize persistentContainer = _persistentContainer;
+/**
+ # Kinda important #
+ ### Moving the CD Stack ###
 
-- (NSPersistentContainer *)persistentContainer {
+ Here is the story so far;
+ First set up the application's File Structure, and then make an empty git with the same name, and a gitignore file. Add a few other readme and license assets.
+ Refactor the rest in the lowest order of dependency from detail view ->
+ KDVMapDetailView, MasterView -> KVPrimeTVControllerView
+ Let XCode refactor this _then_ clean and build every change
+ Init the git for the project -Empty-
+ add the files and an init commit to master
+ Add a branch
+ Add the project you just made commit and then proceed
+
+ ## _Ideally I would do the GUI First_ ##
+
+However I am very interested in process So the first thing to do is go into the AppDelegate (*this here class*) and customize it a little. I prefer the NSPersistentContainer be named _PSK Then this gets kicked off to another Class as first the
+ • KDVAbstractDataController
+ • KDVApplicationDataController
+ • KDVRootDataController
+I am sure there are any number of reasons to _not_ do it this way, but since it is my code and I want it to be modularAF this really is the best way forward.
+ [_sidenote; as I plow through these classes the first thing to do is to append / fix that boilerplate preamble_]
+ 
+ 
+..
+*/
+
+@synthesize PSK = _PSK;
+
+- (NSPersistentContainer *)PSK {
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
-        if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"LanderX"];
-            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
+        if (_PSK == nil) {
+            _PSK = [[NSPersistentContainer alloc] initWithName:@"LanderX"];
+            [_PSK loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -100,13 +127,13 @@
         }
     }
     
-    return _persistentContainer;
+    return _PSK;
 }
 
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSManagedObjectContext *context = self.PSK.viewContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
