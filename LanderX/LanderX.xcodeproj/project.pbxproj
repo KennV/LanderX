@@ -19,6 +19,7 @@
 		385CF5451FE093ED008B9B37 /* LanderXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF5441FE093ED008B9B37 /* LanderXUITests.m */; };
 		389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */; };
 		389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B81FE095FA00415A18 /* KDVPrimeTVController.m */; };
+		38BB30BC1FE0C33800923A99 /* LanderX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BB30BC1FE0C33800923A99 /* LanderX.xcdatamodeld in Sources */,
 				385CF53A1FE093ED008B9B37 /* LanderXTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
