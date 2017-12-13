@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */; };
+		383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */; };
+		383678D51FE0A51F00F5AFD0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383678D41FE0A51F00F5AFD0 /* CoreData.framework */; };
+		385CF51C1FE093ED008B9B37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF51B1FE093ED008B9B37 /* AppDelegate.m */; };
+		385CF5281FE093ED008B9B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF5261FE093ED008B9B37 /* Main.storyboard */; };
+		385CF52A1FE093ED008B9B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385CF5291FE093ED008B9B37 /* Assets.xcassets */; };
+		385CF52D1FE093ED008B9B37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF52B1FE093ED008B9B37 /* LaunchScreen.storyboard */; };
+		385CF5301FE093ED008B9B37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF52F1FE093ED008B9B37 /* main.m */; };
+		385CF53A1FE093ED008B9B37 /* LanderXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF5391FE093ED008B9B37 /* LanderXTests.m */; };
+		385CF5451FE093ED008B9B37 /* LanderXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF5441FE093ED008B9B37 /* LanderXUITests.m */; };
+		389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */; };
+		389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B81FE095FA00415A18 /* KDVPrimeTVController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		385CF5361FE093ED008B9B37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385CF50F1FE093EC008B9B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 385CF5161FE093ED008B9B37;
+			remoteInfo = LanderX;
+		};
+		385CF5411FE093ED008B9B37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 385CF50F1FE093EC008B9B37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 385CF5161FE093ED008B9B37;
+			remoteInfo = LanderX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3801E3551FE097C1009E3B31 /* LanderX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanderX.xcdatamodel; sourceTree = "<group>"; };
+		383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KDVAbstractDataController.h; path = Model/KDVAbstractControllers/KDVAbstractDataController.h; sourceTree = "<group>"; };
+		383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KDVAbstractDataController.m; path = Model/KDVAbstractControllers/KDVAbstractDataController.m; sourceTree = "<group>"; };
+		383678D41FE0A51F00F5AFD0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		385CF5171FE093ED008B9B37 /* LanderX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanderX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		385CF51A1FE093ED008B9B37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		385CF51B1FE093ED008B9B37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		385CF5271FE093ED008B9B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		385CF5291FE093ED008B9B37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		385CF52C1FE093ED008B9B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		385CF52E1FE093ED008B9B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385CF52F1FE093ED008B9B37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		385CF5351FE093ED008B9B37 /* LanderXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanderXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		385CF5391FE093ED008B9B37 /* LanderXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanderXTests.m; sourceTree = "<group>"; };
+		385CF53B1FE093ED008B9B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385CF5401FE093ED008B9B37 /* LanderXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanderXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		385CF5441FE093ED008B9B37 /* LanderXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanderXUITests.m; sourceTree = "<group>"; };
+		385CF5461FE093ED008B9B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		389B31B31FE095EE00415A18 /* KDVMapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDVMapDetailViewController.h; sourceTree = "<group>"; };
+		389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDVMapDetailViewController.m; sourceTree = "<group>"; };
+		389B31B71FE095FA00415A18 /* KDVPrimeTVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDVPrimeTVController.h; sourceTree = "<group>"; };
+		389B31B81FE095FA00415A18 /* KDVPrimeTVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDVPrimeTVController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		385CF5141FE093ED008B9B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				383678D51FE0A51F00F5AFD0 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF5321FE093ED008B9B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF53D1FE093ED008B9B37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3801E3571FE09880009E3B31 /* ApplicationController */ = {
+			isa = PBXGroup;
+			children = (
+				385CF51A1FE093ED008B9B37 /* AppDelegate.h */,
+				385CF51B1FE093ED008B9B37 /* AppDelegate.m */,
+			);
+			name = ApplicationController;
+			sourceTree = "<group>";
+		};
+		383678D31FE0A51F00F5AFD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				383678D41FE0A51F00F5AFD0 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		385CF50E1FE093EC008B9B37 = {
+			isa = PBXGroup;
+			children = (
+				385CF5191FE093ED008B9B37 /* LanderX */,
+				385CF5381FE093ED008B9B37 /* LanderXTests */,
+				385CF5431FE093ED008B9B37 /* LanderXUITests */,
+				385CF5181FE093ED008B9B37 /* Products */,
+				383678D31FE0A51F00F5AFD0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		385CF5181FE093ED008B9B37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				385CF5171FE093ED008B9B37 /* LanderX.app */,
+				385CF5351FE093ED008B9B37 /* LanderXTests.xctest */,
+				385CF5401FE093ED008B9B37 /* LanderXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		385CF5191FE093ED008B9B37 /* LanderX */ = {
+			isa = PBXGroup;
+			children = (
+				389B31BB1FE0965100415A18 /* Model */,
+				389B31BA1FE0962400415A18 /* GUI */,
+				389B31B11FE0954200415A18 /* ViewControllers */,
+				389B31B01FE0943E00415A18 /* ApplicationSupport */,
+			);
+			path = LanderX;
+			sourceTree = "<group>";
+		};
+		385CF5381FE093ED008B9B37 /* LanderXTests */ = {
+			isa = PBXGroup;
+			children = (
+				385CF5391FE093ED008B9B37 /* LanderXTests.m */,
+				385CF53B1FE093ED008B9B37 /* Info.plist */,
+			);
+			path = LanderXTests;
+			sourceTree = "<group>";
+		};
+		385CF5431FE093ED008B9B37 /* LanderXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				385CF5441FE093ED008B9B37 /* LanderXUITests.m */,
+				385CF5461FE093ED008B9B37 /* Info.plist */,
+			);
+			path = LanderXUITests;
+			sourceTree = "<group>";
+		};
+		389B31B01FE0943E00415A18 /* ApplicationSupport */ = {
+			isa = PBXGroup;
+			children = (
+				3801E3571FE09880009E3B31 /* ApplicationController */,
+				385CF5291FE093ED008B9B37 /* Assets.xcassets */,
+				385CF52E1FE093ED008B9B37 /* Info.plist */,
+				385CF52F1FE093ED008B9B37 /* main.m */,
+			);
+			name = ApplicationSupport;
+			sourceTree = "<group>";
+		};
+		389B31B11FE0954200415A18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				389B31B61FE095FA00415A18 /* KDVPrimeTableViewController */,
+				389B31B21FE095EE00415A18 /* KDVMapViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		389B31B21FE095EE00415A18 /* KDVMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				389B31B31FE095EE00415A18 /* KDVMapDetailViewController.h */,
+				389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */,
+			);
+			name = KDVMapViewController;
+			path = ViewControllers/KDVMapViewController;
+			sourceTree = "<group>";
+		};
+		389B31B61FE095FA00415A18 /* KDVPrimeTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				389B31B71FE095FA00415A18 /* KDVPrimeTVController.h */,
+				389B31B81FE095FA00415A18 /* KDVPrimeTVController.m */,
+			);
+			name = KDVPrimeTableViewController;
+			path = ViewControllers/KDVPrimeTableViewController;
+			sourceTree = "<group>";
+		};
+		389B31BA1FE0962400415A18 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				385CF5261FE093ED008B9B37 /* Main.storyboard */,
+				385CF52B1FE093ED008B9B37 /* LaunchScreen.storyboard */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		389B31BB1FE0965100415A18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */,
+				389B31BC1FE0966000415A18 /* DataControllers */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		389B31BC1FE0966000415A18 /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				389B31BD1FE0967100415A18 /* Abstract */,
+			);
+			name = DataControllers;
+			sourceTree = "<group>";
+		};
+		389B31BD1FE0967100415A18 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */,
+				383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		385CF5161FE093ED008B9B37 /* LanderX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385CF5491FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderX" */;
+			buildPhases = (
+				385CF5131FE093ED008B9B37 /* Sources */,
+				385CF5141FE093ED008B9B37 /* Frameworks */,
+				385CF5151FE093ED008B9B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LanderX;
+			productName = LanderX;
+			productReference = 385CF5171FE093ED008B9B37 /* LanderX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		385CF5341FE093ED008B9B37 /* LanderXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385CF54C1FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderXTests" */;
+			buildPhases = (
+				385CF5311FE093ED008B9B37 /* Sources */,
+				385CF5321FE093ED008B9B37 /* Frameworks */,
+				385CF5331FE093ED008B9B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				385CF5371FE093ED008B9B37 /* PBXTargetDependency */,
+			);
+			name = LanderXTests;
+			productName = LanderXTests;
+			productReference = 385CF5351FE093ED008B9B37 /* LanderXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		385CF53F1FE093ED008B9B37 /* LanderXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 385CF54F1FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderXUITests" */;
+			buildPhases = (
+				385CF53C1FE093ED008B9B37 /* Sources */,
+				385CF53D1FE093ED008B9B37 /* Frameworks */,
+				385CF53E1FE093ED008B9B37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				385CF5421FE093ED008B9B37 /* PBXTargetDependency */,
+			);
+			name = LanderXUITests;
+			productName = LanderXUITests;
+			productReference = 385CF5401FE093ED008B9B37 /* LanderXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		385CF50F1FE093EC008B9B37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KDV;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = dubian;
+				TargetAttributes = {
+					385CF5161FE093ED008B9B37 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					385CF5341FE093ED008B9B37 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 385CF5161FE093ED008B9B37;
+					};
+					385CF53F1FE093ED008B9B37 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 385CF5161FE093ED008B9B37;
+					};
+				};
+			};
+			buildConfigurationList = 385CF5121FE093EC008B9B37 /* Build configuration list for PBXProject "LanderX" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 385CF50E1FE093EC008B9B37;
+			productRefGroup = 385CF5181FE093ED008B9B37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				385CF5161FE093ED008B9B37 /* LanderX */,
+				385CF5341FE093ED008B9B37 /* LanderXTests */,
+				385CF53F1FE093ED008B9B37 /* LanderXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		385CF5151FE093ED008B9B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385CF52D1FE093ED008B9B37 /* LaunchScreen.storyboard in Resources */,
+				385CF52A1FE093ED008B9B37 /* Assets.xcassets in Resources */,
+				385CF5281FE093ED008B9B37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF5331FE093ED008B9B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF53E1FE093ED008B9B37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		385CF5131FE093ED008B9B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */,
+				389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */,
+				389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */,
+				383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */,
+				385CF5301FE093ED008B9B37 /* main.m in Sources */,
+				385CF51C1FE093ED008B9B37 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF5311FE093ED008B9B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385CF53A1FE093ED008B9B37 /* LanderXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		385CF53C1FE093ED008B9B37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				385CF5451FE093ED008B9B37 /* LanderXUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		385CF5371FE093ED008B9B37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 385CF5161FE093ED008B9B37 /* LanderX */;
+			targetProxy = 385CF5361FE093ED008B9B37 /* PBXContainerItemProxy */;
+		};
+		385CF5421FE093ED008B9B37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 385CF5161FE093ED008B9B37 /* LanderX */;
+			targetProxy = 385CF5411FE093ED008B9B37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		385CF5261FE093ED008B9B37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385CF5271FE093ED008B9B37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		385CF52B1FE093ED008B9B37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				385CF52C1FE093ED008B9B37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		385CF5471FE093ED008B9B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		385CF5481FE093ED008B9B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		385CF54A1FE093ED008B9B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		385CF54B1FE093ED008B9B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		385CF54D1FE093ED008B9B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanderX.app/LanderX";
+			};
+			name = Debug;
+		};
+		385CF54E1FE093ED008B9B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LanderX.app/LanderX";
+			};
+			name = Release;
+		};
+		385CF5501FE093ED008B9B37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LanderX;
+			};
+			name = Debug;
+		};
+		385CF5511FE093ED008B9B37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				INFOPLIST_FILE = LanderXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nV.LanderXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LanderX;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		385CF5121FE093EC008B9B37 /* Build configuration list for PBXProject "LanderX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385CF5471FE093ED008B9B37 /* Debug */,
+				385CF5481FE093ED008B9B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385CF5491FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385CF54A1FE093ED008B9B37 /* Debug */,
+				385CF54B1FE093ED008B9B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385CF54C1FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385CF54D1FE093ED008B9B37 /* Debug */,
+				385CF54E1FE093ED008B9B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		385CF54F1FE093ED008B9B37 /* Build configuration list for PBXNativeTarget "LanderXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385CF5501FE093ED008B9B37 /* Debug */,
+				385CF5511FE093ED008B9B37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3801E3551FE097C1009E3B31 /* LanderX.xcdatamodel */,
+			);
+			currentVersion = 3801E3551FE097C1009E3B31 /* LanderX.xcdatamodel */;
+			path = LanderX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 385CF50F1FE093EC008B9B37 /* Project object */;
+}
