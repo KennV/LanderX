@@ -26,7 +26,7 @@
 
   UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
   KDVPrimeTVController *controller = (KDVPrimeTVController *)masterNavigationController.topViewController;
-  controller.managedObjectContext = self.PSK.viewContext;
+  [controller setManagedObjectContext:[[self PSK]viewContext]];
   return YES;
 }
 
