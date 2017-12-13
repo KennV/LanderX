@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */; };
+		383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */; };
+		383678D51FE0A51F00F5AFD0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383678D41FE0A51F00F5AFD0 /* CoreData.framework */; };
 		385CF51C1FE093ED008B9B37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF51B1FE093ED008B9B37 /* AppDelegate.m */; };
 		385CF5281FE093ED008B9B37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385CF5261FE093ED008B9B37 /* Main.storyboard */; };
 		385CF52A1FE093ED008B9B37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385CF5291FE093ED008B9B37 /* Assets.xcassets */; };
@@ -38,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		3801E3551FE097C1009E3B31 /* LanderX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanderX.xcdatamodel; sourceTree = "<group>"; };
+		383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KDVAbstractDataController.h; path = Model/KDVAbstractControllers/KDVAbstractDataController.h; sourceTree = "<group>"; };
+		383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KDVAbstractDataController.m; path = Model/KDVAbstractControllers/KDVAbstractDataController.m; sourceTree = "<group>"; };
+		383678D41FE0A51F00F5AFD0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		385CF5171FE093ED008B9B37 /* LanderX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanderX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385CF51A1FE093ED008B9B37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		385CF51B1FE093ED008B9B37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				383678D51FE0A51F00F5AFD0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,14 @@
 			name = ApplicationController;
 			sourceTree = "<group>";
 		};
+		383678D31FE0A51F00F5AFD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				383678D41FE0A51F00F5AFD0 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		385CF50E1FE093EC008B9B37 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +113,7 @@
 				385CF5381FE093ED008B9B37 /* LanderXTests */,
 				385CF5431FE093ED008B9B37 /* LanderXUITests */,
 				385CF5181FE093ED008B9B37 /* Products */,
+				383678D31FE0A51F00F5AFD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +225,8 @@
 		389B31BD1FE0967100415A18 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
+				383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */,
+				383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */,
 			);
 			name = Abstract;
 			sourceTree = "<group>";
@@ -276,6 +293,7 @@
 		385CF50F1FE093EC008B9B37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KDV;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = dubian;
 				TargetAttributes = {
@@ -350,6 +368,7 @@
 				3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */,
 				389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */,
 				389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */,
+				383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */,
 				385CF5301FE093ED008B9B37 /* main.m in Sources */,
 				385CF51C1FE093ED008B9B37 /* AppDelegate.m in Sources */,
 			);
