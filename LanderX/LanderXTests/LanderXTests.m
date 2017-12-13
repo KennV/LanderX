@@ -50,9 +50,12 @@ return the new
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
-
+/* OkaY I can easily test that it exists, but what does it relly look lik ein runtime
+it is just a breakpoint away b\c I _feel_ I should be able to see the MOC 
+*/
 - (void)testSUTExists {
   XCTAssertNotNil(_SUT);
+//  XCTAssertNotNil([[self SUT]managedObjectContext]);
 }
 
 - (void)testPerformanceExample {

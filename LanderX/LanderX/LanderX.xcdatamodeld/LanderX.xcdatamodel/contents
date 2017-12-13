@@ -6,7 +6,11 @@
         </attribute>
         <userInfo/>
     </entity>
+    <entity name="KDVRootEntity" representedClassName="KDVRootEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="incepDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="KDVRootEntity" positionX="261" positionY="198" width="128" height="60"/>
     </elements>
 </model>
