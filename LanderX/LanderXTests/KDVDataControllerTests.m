@@ -21,8 +21,8 @@
 
 /**
  # although it might seem excessive #
-I have pulled this apps data into a test. I am not 100% sure, but I think it might make sense to test the AppDeli in that test and test the controller here
-*/
+ I have pulled this apps data into a test. I am not 100% sure, but I think it might make sense to test the AppDeli in that test and test the controller here
+ */
 
 #import <XCTest/XCTest.h>
 /* Note: To test CD You Must include the model in the compiler for this test target */
@@ -31,15 +31,13 @@ I have pulled this apps data into a test. I am not 100% sure, but I think it mig
 
 
 @interface KDVDataControllerTests : XCTestCase
-@property (strong, nonatomic)NSManagedObjectContext *SUT;
-//@property (strong, nonatomic)KDVPrimeTVController *SUT;
+@property (strong, nonatomic)KDVAbstractDataController *SUT;
 @property (strong, nonatomic)NSPersistentStoreCoordinator *PSK;
 @end
 
 @implementation KDVDataControllerTests
 
 @synthesize SUT = _SUT;
-//@synthesize SUT = _SUT;
 @synthesize PSK = _PSK;
 
 #pragma mark - GET_URL For this
@@ -53,13 +51,12 @@ I have pulled this apps data into a test. I am not 100% sure, but I think it mig
 
 - (void)setUp {
   [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-//  [self setSUT:[[KDV]]
-  //  [self setupInMemoryPSK];
-}
+  // Put setup code here. This method is called before the invocation of each test method in the class.
+  [self setSUT:[[KDVAbstractDataController alloc]init]];
+  }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+  // Put teardown code here. This method is called after the invocation of each test method in the class.
   [super tearDown];
   [self setSUT:nil];
 }
@@ -67,14 +64,45 @@ I have pulled this apps data into a test. I am not 100% sure, but I think it mig
 - (void)testSUTExists {
   /* Okay I can easily test that it exists, but what does it relly look like in runtime
    it is just a breakpoint away b\c I _feel_ I should be able to see the MOC (At least the current / demo PSK)
+   Therefore since I am no longer testing the _MOC {see yesterday's jam} I will be testing the controller these two lines failed. b\c I have no init.
+   Naturally I will make an initAllUp()/initAllDefaults this will make the next two tests fail
    */
-
   XCTAssertNotNil(_SUT);
   XCTAssertNotNil([self SUT]);
-  // these two fail because it is only init'd up there the view
-  // the data has not been loaded
-  //  [[self SUT] viewDidLoad];
-  //  XCTAssertNotNil([[self SUT]managedObjectContext]);
+  // _Those next two tests_
+  // Actually this passes, _however_ I might after these tests pass go back and set the all to _nil_ and test failThrough
+  XCTAssertNotNil([[[self SUT]PSK]viewContext]);
+  //    XCTAssertNotNil([[[self SUT]MOM]description]);
 }
+
+- (void)testPSKExists {
+  [self setSUT:nil];
+  id m = ([[KDVAbstractDataController alloc]initAllDefaults]);
+  XCTAssertNotNil([m PSK]);
+}
+
+- (void)testSUTInitsAllWithDefaults {
+  [self setSUT:nil];
+  XCTAssertNotNil([[KDVAbstractDataController alloc]initAllDefaults]);
+}
+
+- (void)testSUTInitsAllUp {
+  [self setSUT:nil];
+  //  [self setSUT:nil];
+  XCTAssertNil(_SUT);
+  XCTAssertNil([self SUT]);
+  XCTAssertNil([[[self SUT]PSK]viewContext]);
+  XCTAssertNotNil([[KDVAbstractDataController alloc]initAllUp]);
+    id tstUnit = [[KDVAbstractDataController alloc]initAllUp];
+  //Which is an error so I must fix that
+  XCTAssertNotNil(tstUnit);
+  XCTAssertNotNil([[tstUnit PSK]viewContext]);
+  //when i test the fetchcon it is both false and true
+#pragma mark - fixme: Test the fetchController
+  
+}
+//
+
+
 
 @end

@@ -37,10 +37,12 @@ Next of Course is the *MOM, but that is still useful - no it isn't. It is all ab
 @property (readonly, strong, nonatomic)NSPersistentContainer *PSK;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchCon;
-@property (nonatomic, copy) NSString* dbName;
+@property (nonatomic, copy) NSString* appDatabaseName;
 @property (nonatomic, copy) NSString* entityClassName;
-@property (nonatomic, assign) BOOL copyDatabaseIfNotPresent;
+//@property (nonatomic, assign) BOOL copyDatabaseIfNotPresent;
 
 @property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
 
+- (instancetype)initAllUp;
+-(instancetype)initAllDefaults;
 @end

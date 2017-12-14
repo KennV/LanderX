@@ -14,7 +14,39 @@
 @synthesize MOM = _MOM;
 @synthesize PSK = _PSK;
 
+#pragma mark - Oooh Hello
+
+- (instancetype)initAllUp {
+  if (!(self = [self initAllDefaults])) {
+    return nil;
+  }
+  /**
+   And Naturally I must set these to
+   the correct values for the app.
+   */
+
+  return (self);
+}
+
+-(instancetype)initAllDefaults {
+  if (!(self = [super init])) {
+    return nil;
+  }
+  /**
+   Now obviously I must set these to as close to nil as possible, 
+   */
+
+  self.appDatabaseName = (@" ");
+  self.entityClassName = (@" ");
+  return (self);
+}
+
+
 #pragma mark - Fetched results controller
+
+//-(NSFetchedResultsController *)_fetchCon {
+//  return (nil);
+//}
 
 - (NSFetchedResultsController *)fetchCon {
     // This is old code, and I use it on a table but I am not sure it goes here. But it can be cleaner
@@ -120,7 +152,7 @@
 }
 
 #pragma mark -
-
+/**
 - (void)performAutomaticLightweightMigration {
   
   NSError *error;
@@ -139,6 +171,8 @@
 //        // Handle the error.
 //    }
 }
+
+*/
 
 - (NSArray *)miObjects {
     if (!_miObjects) {
