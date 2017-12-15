@@ -27,7 +27,8 @@
 
   return (self);
 }
-
+// Init should fallthrough to here and
+// initAllValues… should be the default
 -(instancetype)initAllDefaults {
   if (!(self = [super init])) {
     return nil;
@@ -36,8 +37,8 @@
    Now obviously I must set these to as close to nil as possible, 
    */
 
-  self.appDatabaseName = (@" ");
-  self.entityClassName = (@" ");
+//  self.appDatabaseName = (@" ");
+//  self.entityClassName = (@" ");
   return (self);
 }
 

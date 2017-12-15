@@ -41,6 +41,8 @@
 @synthesize PSK = _PSK;
 
 #pragma mark - GET_URL For this
+// https://medium.com/flawless-app-stories/cracking-the-tests-for-core-data-15ef893a3fee
+//
 
 - (void)setupInMemoryPSK {
   //
@@ -100,6 +102,7 @@
   //when i test the fetchcon it is both false and true
 #pragma mark - fixme: Test the fetchController
   
+
 }
 //
 
