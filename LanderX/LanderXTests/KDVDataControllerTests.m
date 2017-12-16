@@ -1,13 +1,16 @@
-//
-//  KDVDataControllerTests.m
-//  LanderXTests
-//
-//  Created by Kenn Villegas on 12/14/17.
-//  Copyright © 2017 dubian. All rights reserved.
-//
 /**
- 
- OKay, these; the first set of tests should only determine if the Data {MOC, MOM, and PSK } are healthy
+
+  KDVDataControllerTests.m
+  LanderXTests
+
+  Created by Kenn Villegas on 12/14/17.
+  Copyright © 2017 dubian. All rights reserved.
+
+*/
+
+/**
+
+ Okay, these; the first set of tests should only determine if the Data {MOC, MOM, and PSK } are healthy
  _Alternately_ I can also write failing tests and see what the causes and features of these failures are
  Regardless I need to set up an in memory MOC which is actually just longhand for PSK.viewContext
  
@@ -32,7 +35,7 @@
 
 @interface KDVDataControllerTests : XCTestCase
 @property (strong, nonatomic)KDVAbstractDataController *SUT;
-@property (strong, nonatomic)NSPersistentStoreCoordinator *PSK;
+@property (strong, nonatomic)NSPersistentContainer *PSK;
 @end
 
 @implementation KDVDataControllerTests
@@ -40,15 +43,40 @@
 @synthesize SUT = _SUT;
 @synthesize PSK = _PSK;
 
-#pragma mark - GET_URL For this
-// https://medium.com/flawless-app-stories/cracking-the-tests-for-core-data-15ef893a3fee
-//
 
-- (void)setupInMemoryPSK {
-  //
-  // NSManagedObjectModel *tMOM = [NSManagedObjectModel mergedModelFromBundles:[NSBundle main]];
-  //  NSManagedObjectModel *tMOM = [NSManagedObjectModel mergedModelFromBundles:(NSBundle.mainBundle)];
-  //  NSPersistentStoreCoordinator *tPOP = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:tMOM];
+- (NSPersistentContainer *)PSK {
+  // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+  @synchronized (self) {
+//    NSError *error = nil;
+    if (_PSK == nil) {
+      // _THIS IS THE ONLY REAL DIFFERENCE BEWEEN PRODUCTION() AND TEST()
+      NSPersistentStoreDescription *dsc = [[NSPersistentStoreDescription alloc]init];
+      [dsc setType:(@"NSInMemoryStoreType")]; //dsc.type = (NSInMemoryStoreType);
+      
+      _PSK = [[NSPersistentContainer alloc] initWithName:@"LanderX"];
+      [_PSK loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *dsc, NSError *error)
+
+       {
+        if (error != nil) {
+          // Replace this implementation with code to handle the error appropriately.
+          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+          
+          /*
+           Typical reasons for an error here include:
+           * The parent directory does not exist, cannot be created, or disallows writing.
+           * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+           * The device is out of space.
+           * The store could not be migrated to the current model version.
+           Check the error message to determine what the actual problem was.
+           */
+          NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+          abort();
+        }
+      }];
+    }
+  }
+  
+  return _PSK;
 }
 
 - (void)setUp {
@@ -61,6 +89,7 @@
   // Put teardown code here. This method is called after the invocation of each test method in the class.
   [super tearDown];
   [self setSUT:nil];
+  [self setPSK:(nil)];
 }
 
 - (void)testSUTExists {
@@ -78,9 +107,8 @@
 }
 
 - (void)testPSKExists {
-  [self setSUT:nil];
-  id m = ([[KDVAbstractDataController alloc]initAllDefaults]);
-  XCTAssertNotNil([m PSK]);
+  XCTAssertNotNil([self PSK ]);
+  XCTAssertNotNil([[self PSK]viewContext]);
 }
 
 - (void)testSUTInitsAllWithDefaults {
@@ -105,7 +133,6 @@
 
 }
 //
-
 
 
 @end
