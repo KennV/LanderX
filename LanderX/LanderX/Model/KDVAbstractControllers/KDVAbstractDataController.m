@@ -14,6 +14,9 @@
 @synthesize MOM = _MOM;
 @synthesize PSK = _PSK;
 
+@synthesize entityClassName = _entityClassName;
+@synthesize appDatabaseName = _appDatabaseName;
+
 #pragma mark - Oooh Hello
 
 - (instancetype)initAllUp {
@@ -24,22 +27,31 @@
    And Naturally I must set these to
    the correct values for the app.
    */
-
   return (self);
 }
 // Init should fallthrough to here and
 // initAllValues… should be the default
 -(instancetype)initAllDefaults {
-  if (!(self = [super init])) {
-    return nil;
-  }
-  /**
-   Now obviously I must set these to as close to nil as possible, 
-   */
-
-//  self.appDatabaseName = (@" ");
-//  self.entityClassName = (@" ");
+//  if (!(self = [super init])) {
+//    return nil;
+//  }
+  self = [super init];
+  if (self) {
+  [self setEntityClassName:(@"NSManagedObject")];
+  [self setAppDatabaseName:(@"LanderX")];
   return (self);
+  }
+  return(nil);
+}
+
+- (instancetype)initWithModelClass:(NSString *)modelName
+                            dbName:(NSString *)dbName
+                           appName:(NSString *)appName {
+  self = [self initAllDefaults];
+  if (self) {
+    
+  }
+  return self;
 }
 
 
@@ -57,6 +69,7 @@
         return _fetchCon;
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  
     // Edit the entity name as appropriate. (Event, RootEntity, ABSTRACT_OBJ)
     NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityClassName] inManagedObjectContext:[[self PSK]viewContext]];
     
@@ -95,9 +108,11 @@
     if (_MOM != nil) {
         return _MOM;
     }
-    // LANDER
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LanderX" withExtension:@"MOMd"];
+    // LANDER @ LanderX.sqlite
+//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:[self appDatabaseName] withExtension:@"MOMd"];
+      NSURL *modelURL = [[NSBundle mainBundle] URLForResource:[self appDatabaseName] withExtension:@"sqlite"];
     _MOM = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+  
     return _MOM;
 }
 
@@ -105,20 +120,10 @@
   // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
   @synchronized (self) {
     if (_PSK == nil) {
-      _PSK = [[NSPersistentContainer alloc] initWithName:@"LanderX"];
+      _PSK = [[NSPersistentContainer alloc] initWithName:[self appDatabaseName]];
       [_PSK loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
         if (error != nil) {
-          // Replace this implementation with code to handle the error appropriately.
           // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-          
-          /*
-           Typical reasons for an error here include:
-           * The parent directory does not exist, cannot be created, or disallows writing.
-           * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-           * The device is out of space.
-           * The store could not be migrated to the current model version.
-           Check the error message to determine what the actual problem was.
-           */
           
           // Report any error we got.
           NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -134,7 +139,6 @@
       }];
     }
   }
-  
   return _PSK;
 }
 

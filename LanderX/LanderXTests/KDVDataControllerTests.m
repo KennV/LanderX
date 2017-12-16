@@ -58,17 +58,7 @@
 
        {
         if (error != nil) {
-          // Replace this implementation with code to handle the error appropriately.
-          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
           
-          /*
-           Typical reasons for an error here include:
-           * The parent directory does not exist, cannot be created, or disallows writing.
-           * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-           * The device is out of space.
-           * The store could not be migrated to the current model version.
-           Check the error message to determine what the actual problem was.
-           */
           NSLog(@"Unresolved error %@, %@", error, error.userInfo);
           abort();
         }
@@ -82,8 +72,8 @@
 - (void)setUp {
   [super setUp];
   // Put setup code here. This method is called before the invocation of each test method in the class.
-  [self setSUT:[[KDVAbstractDataController alloc]init]];
-  }
+  [self setSUT:[[KDVAbstractDataController alloc]initAllDefaults]];
+}
 
 - (void)tearDown {
   // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -93,22 +83,20 @@
 }
 
 - (void)testSUTExists {
-  /* Okay I can easily test that it exists, but what does it relly look like in runtime
-   it is just a breakpoint away b\c I _feel_ I should be able to see the MOC (At least the current / demo PSK)
-   Therefore since I am no longer testing the _MOC {see yesterday's jam} I will be testing the controller these two lines failed. b\c I have no init.
-   Naturally I will make an initAllUp()/initAllDefaults this will make the next two tests fail
-   */
-  XCTAssertNotNil(_SUT);
   XCTAssertNotNil([self SUT]);
-  // _Those next two tests_
-  // Actually this passes, _however_ I might after these tests pass go back and set the all to _nil_ and test failThrough
+  
   XCTAssertNotNil([[[self SUT]PSK]viewContext]);
   //    XCTAssertNotNil([[[self SUT]MOM]description]);
+}
+
+- (void)testSUTMOM {
+//  XCTAssertNotNil([[self SUT]MOM].description);
 }
 
 - (void)testPSKExists {
   XCTAssertNotNil([self PSK ]);
   XCTAssertNotNil([[self PSK]viewContext]);
+//  XCTAssert(self.PSK.persistentStoreDescriptions.description
 }
 
 - (void)testSUTInitsAllWithDefaults {
@@ -123,16 +111,47 @@
   XCTAssertNil([self SUT]);
   XCTAssertNil([[[self SUT]PSK]viewContext]);
   XCTAssertNotNil([[KDVAbstractDataController alloc]initAllUp]);
-    id tstUnit = [[KDVAbstractDataController alloc]initAllUp];
+    KDVAbstractDataController *tstUnit = [[KDVAbstractDataController alloc]initAllUp];
   //Which is an error so I must fix that
   XCTAssertNotNil(tstUnit);
   XCTAssertNotNil([[tstUnit PSK]viewContext]);
+//  XCTAssertNotNil([tstUnit MOM]);
+
   //when i test the fetchcon it is both false and true
 #pragma mark - fixme: Test the fetchController
-  
-
 }
 //
+- (void)testJive {
+  XCTAssertNotNil([self SUT]);
+  XCTAssertNotNil([[self SUT]entityClassName]);
+  XCTAssertNotNil([[self SUT]PSK]);
+  XCTAssertNotNil([[[self SUT]PSK]managedObjectModel]);
+  XCTAssertNotNil([[[self SUT]PSK]viewContext]);
 
+  XCTAssertNotNil([[self SUT]entityClassName]);
+  XCTAssert([[[self SUT]entityClassName] isEqual:(@"NSManagedObject")]);
+  XCTAssertNotNil([[self SUT]appDatabaseName]);
+  XCTAssert([[[self SUT]appDatabaseName] isEqual:(@"LanderX")]);
+  
+//  XCTAssertNotNil([[self SUT]MOM]);
+}
 
+- (void)test2Jive {
+  XCTAssertNotNil([self PSK]);
+  XCTAssertNotNil([[self PSK]managedObjectModel]);
+  XCTAssertNotNil([[self PSK]viewContext]);
+}
+
+- (void)testBigInit {
+  XCTAssertNotNil(@1);
+}
+
+- (void)testFailingNameInit {
+  XCTAssertNotNil(@1);
+}
+
+- (void)testFailingAppENVInit {
+  XCTAssertNotNil(@1);
+}
 @end
+
