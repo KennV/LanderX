@@ -11,11 +11,43 @@
 
 @implementation KDVAbstractDataController
 
-@synthesize MOC = _MOC;
 @synthesize MOM = _MOM;
 @synthesize PSK = _PSK;
 
+#pragma mark - Oooh Hello
+
+- (instancetype)initAllUp {
+  if (!(self = [self initAllDefaults])) {
+    return nil;
+  }
+  /**
+   And Naturally I must set these to
+   the correct values for the app.
+   */
+
+  return (self);
+}
+// Init should fallthrough to here and
+// initAllValues… should be the default
+-(instancetype)initAllDefaults {
+  if (!(self = [super init])) {
+    return nil;
+  }
+  /**
+   Now obviously I must set these to as close to nil as possible, 
+   */
+
+//  self.appDatabaseName = (@" ");
+//  self.entityClassName = (@" ");
+  return (self);
+}
+
+
 #pragma mark - Fetched results controller
+
+//-(NSFetchedResultsController *)_fetchCon {
+//  return (nil);
+//}
 
 - (NSFetchedResultsController *)fetchCon {
     // This is old code, and I use it on a table but I am not sure it goes here. But it can be cleaner
@@ -26,7 +58,7 @@
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate. (Event, RootEntity, ABSTRACT_OBJ)
-    NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityClassName] inManagedObjectContext:[self MOC]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityClassName] inManagedObjectContext:[[self PSK]viewContext]];
     
     [fetchRequest setEntity:entity];
     // Set the batch size to a suitable number.
@@ -38,7 +70,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[self MOC] sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[[self PSK]viewContext] sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchCon = aFetchedResultsController;
     
@@ -68,53 +100,47 @@
     _MOM = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _MOM;
 }
-- (NSPersistentStoreCoordinator *)PSK {
-    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it.
-    if (_PSK != nil) {
-        return _PSK;
-    }
-    
-    // Create the coordinator and store
-    
-    _PSK = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self MOM]];
-    // LANDER
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"LanderX"];
-    NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_PSK addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        // Report any error we got.
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
-        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
-        dict[NSUnderlyingErrorKey] = error;
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _PSK;
-}
 
-- (NSManagedObjectContext *)MOC {
-    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-    if (_MOC != nil) {
-        return _MOC;
+- (NSPersistentContainer *)PSK {
+  // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
+  @synchronized (self) {
+    if (_PSK == nil) {
+      _PSK = [[NSPersistentContainer alloc] initWithName:@"LanderX"];
+      [_PSK loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
+        if (error != nil) {
+          // Replace this implementation with code to handle the error appropriately.
+          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+          
+          /*
+           Typical reasons for an error here include:
+           * The parent directory does not exist, cannot be created, or disallows writing.
+           * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+           * The device is out of space.
+           * The store could not be migrated to the current model version.
+           Check the error message to determine what the actual problem was.
+           */
+          
+          // Report any error we got.
+          NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+          dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
+//          dict[NSLocalizedFailureReasonErrorKey] = failureReason;
+          dict[NSUnderlyingErrorKey] = error;
+          error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+          // Replace this with code to handle the error appropriately.
+          // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+          NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+          abort();
+        }
+      }];
     }
-    
-    NSPersistentStoreCoordinator *coordinator = [self PSK];
-    if (!coordinator) {
-        return nil;
-    }
-    _MOC = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_MOC setPersistentStoreCoordinator:coordinator];
-    return _MOC;
+  }
+  
+  return _PSK;
 }
 
 #pragma mark - Core Data Saving support
 - (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = [self MOC];
+    NSManagedObjectContext *managedObjectContext = [[self PSK]viewContext];
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
@@ -127,25 +153,27 @@
 }
 
 #pragma mark -
-
+/**
 - (void)performAutomaticLightweightMigration {
-    
-    NSError *error;
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", [self dbName], @".sqlite"]];
-    
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-    
-    if (![_PSK addPersistentStoreWithType:NSSQLiteStoreType
-                            configuration:nil
-                                      URL:storeURL
-                                  options:options
-                                    error:&error]){
-        // Handle the error.
-    }
+  
+  NSError *error;
+  
+  NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", [self dbName], @".sqlite"]];
+  
+  NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                           [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                           [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+#pragma mark  TODO: Fix The [PSK addPersistentStore…,] call
+//    if (![_PSK addPersistentStoreWithType:NSSQLiteStoreType
+//                            configuration:nil
+//                                      URL:storeURL
+//                                  options:options
+//                                    error:&error]){
+//        // Handle the error.
+//    }
 }
+
+*/
 
 - (NSArray *)miObjects {
     if (!_miObjects) {

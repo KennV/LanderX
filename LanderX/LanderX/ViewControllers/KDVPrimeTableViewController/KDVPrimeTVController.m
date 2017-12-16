@@ -1,10 +1,11 @@
-//
-//  MasterViewController.m
-//  LanderX
-//
-//  Created by Kenn Villegas on 12/12/17.
-//  Copyright © 2017 dubian. All rights reserved.
-//
+/**
+  MasterViewController.m
+  LanderX
+
+  Created by Kenn Villegas on 12/12/17.
+  Copyright © 2017 dubian. All rights reserved.
+
+*/
 
 #import "KDVPrimeTVController.h"
 #import "KDVMapDetailViewController.h"
@@ -22,7 +23,7 @@
 
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
   self.navigationItem.rightBarButtonItem = addButton;
-  self.detailViewController = (KDVMapDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+  self.mapViewController = (KDVMapDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 

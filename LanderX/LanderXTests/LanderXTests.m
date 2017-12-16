@@ -1,10 +1,12 @@
-//
-//  LanderXTests.m
-//  LanderXTests
-//
-//  Created by Kenn Villegas on 12/12/17.
-//  Copyright © 2017 dubian. All rights reserved.
-//
+/**
+  LanderXTests.m
+  LanderXTests
+
+  Created by Kenn Villegas on 12/12/17.
+  Copyright © 2017 dubian. All rights reserved.
+
+ revision * split into it's own class 20171214
+*/
 
 #import <XCTest/XCTest.h>
 
@@ -14,14 +16,15 @@
 
 @implementation LanderXTests
 
+
 - (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+  [super setUp];
+  // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+  [super tearDown];
 }
 
 - (void)testExample {
