@@ -20,29 +20,34 @@ And also do a git commit
 /**
 ### Section two, ###
 
-I have started the tests and as part of the simplification of this code I _realized_ that while I din't really like _moc/moc, I positively _don't need_ _MOC/MOC. Not the end of the world but at some point this class will become little more than Macros, and _obviously protocols_
-[Damn SideNotes: It is not actually something that strictly needs to go away - - But MOC (which really reads much better than NSManagedObjectContext/managedObjectContext or moc, lowercase. AAMOF before container it was pretty nifty, which is why it shows up in so many files Getting rid of it is easy _But_ it reminds me of when it was hard ]
-There of course, is the possibility that it can be used in a subclass, or in an Obj that uses one of this controllers subclasses, but for now MOC is ded, lawng live MOC
-Next of Course is the *MOM, but that is still useful - no it isn't. It is all about the PSK and the entityName. MOM is just the complete version of dbName
+
 */
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 @interface KDVAbstractDataController : NSObject <NSFetchedResultsControllerDelegate>
-//first some basic ivars
+//first some basic ivars Utilities for the Class
+@property (readonly, strong, nonatomic)NSPersistentContainer *PSK;
 
 @property (readonly, strong, nonatomic) NSManagedObjectModel *MOM;
 
-@property (readonly, strong, nonatomic)NSPersistentContainer *PSK;
+@property (readonly, strong)NSManagedObjectContext *MOC;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchCon;
-@property (nonatomic, copy) NSString* appDatabaseName;
+//@property (strong, nonatomic) NSFetchedResultsController *fetchCon;
+// Also need some instance variables for custom objects
+/**
+The entity model for this controllers class/subclass
+*/
 @property (nonatomic, copy) NSString* entityClassName;
-//@property (nonatomic, assign) BOOL copyDatabaseIfNotPresent;
+/**
+The working name for this app's db
+*/
+@property (nonatomic, copy) NSString* appDatabaseName;
 
-@property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
+//@property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
 
 - (instancetype)initAllUp;
--(instancetype)initAllDefaults;
+- (instancetype)initAllDefaults;
+//- (instancetype)initWithModelClass:(NSString *)modelName dbName:(NSString *)dbName appName:(NSString *)appName;
 @end
