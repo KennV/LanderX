@@ -124,6 +124,7 @@
 - (void)testJive {
   XCTAssertNotNil([self SUT]);
   XCTAssertNotNil([[self SUT]entityClassName]);
+//  XCTAssertNotNil([self SUT]
   XCTAssertNotNil([[self SUT]PSK]);
   XCTAssertNotNil([[[self SUT]PSK]managedObjectModel]);
   XCTAssertNotNil([[[self SUT]PSK]viewContext]);

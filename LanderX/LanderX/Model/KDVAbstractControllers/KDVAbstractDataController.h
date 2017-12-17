@@ -28,11 +28,13 @@ And also do a git commit
 
 @interface KDVAbstractDataController : NSObject <NSFetchedResultsControllerDelegate>
 //first some basic ivars Utilities for the Class
-@property (readonly, strong, nonatomic) NSManagedObjectModel *MOM;
-
 @property (readonly, strong, nonatomic)NSPersistentContainer *PSK;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchCon;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *MOM;
+
+@property (readonly, strong)NSManagedObjectContext *MOC;
+
+//@property (strong, nonatomic) NSFetchedResultsController *fetchCon;
 // Also need some instance variables for custom objects
 /**
 The entity model for this controllers class/subclass
@@ -43,7 +45,7 @@ The working name for this app's db
 */
 @property (nonatomic, copy) NSString* appDatabaseName;
 
-@property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
+//@property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
 
 - (instancetype)initAllUp;
 - (instancetype)initAllDefaults;
