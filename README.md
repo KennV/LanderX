@@ -1,5 +1,24 @@
 # The Intention is to Update my CoreData Shim #
 
+### Part 4 ###
+Ok As a sense of perspective; I could and may take the previous AbsDataController and make that last ivar test-safe. this would bring my _coverage%_ pretty high. This is amazing because If I had gone any of the Ares/tricorder/lander versions of this I would be much further along and had about zero percent tests. AAMOF let me show you
+• First make a GUI
+	• Just Use the Project one. At this point if it goes wrong it is dispoable this is possibly my best reason for writing this as a library is that I have written this code so many ways over and over again.
+  • this is not as applicable b\c I am shooting for library
+• Next Bring in Abstract and Application  DataControllers
+  • Make a Root Entity and replace the one from the AppDeli -> MasterView
+		• But would not be the correct pattern, b\c  of the base arrogance of "don't need to test yet"
+		• Testing after the first crash is stupid
+		• 
+	• Fill Up the DataModel and swap the "Event" entity for my KVRootEntity()
+		 • Also change the Event.Date in the KVRootEntity.incepDate
+		 • Add a bunch of other Classes and child-entities
+• Then, Maybe? ¿add test?.
+NOPE
+This is quite wrong. I have done this and my next question if I could go back to me old self; I would say "What are you trying to accomplish?". Because If I want code that I will keep trust and use properly I will get that from unitTests. The best case is that it would take me at least a month to get that hairball under test. And I have gotten here in about 6 calendar days. It is not necesarily easy or dificult. It does require a commitment. Tests and comments _do_ have a positive effect on code health.
+(Back to work for a moment )
+As I have already
+		
 
 ### Part 3 ###
 
