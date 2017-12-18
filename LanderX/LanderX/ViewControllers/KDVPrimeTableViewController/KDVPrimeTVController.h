@@ -21,8 +21,15 @@ While I am in this Commit
 observer this fetchectd condtroller by default set to <T*> as event when it should really be
  NSFetchedResultsController<KDVRootEntity>
 So I made one with an incepDate and this test is currently under test.
+Added test KDVRootEntity* into production
  */
-@property (strong, nonatomic) NSFetchedResultsController<Event *> *fetchedResultsController;
+
+/**
+ # All Objects Getter #
+ 
+ KDVRootEntity
+ */
+@property (strong, nonatomic) NSFetchedResultsController<KDVRootEntity *> *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 
