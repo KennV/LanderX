@@ -1,13 +1,22 @@
 # The Intention is to Update my CoreData Shim #
 
-### Part 5 ###
+### Part 6 ###
 Tests and comments _do_ have a positive effect on code health.
+
+### Part 5 ###
 Back to work for a moment I do need to have something better than the project template "Event" or the AbstractControllers even worse version of raw NSManagedObject. Factually speaking this is simply not ready to put into an independent project - even if it has few if any dependencies. Look I just killed one now. 
 So I have to make a Entity in the modeler
-As I have already have a KDVRootEntity I decided to add KDVAbstractEntity and put incepDate up in there. Then I basically manually refactored it. {I will almost ignore the new bugs in Xcode, like it crashes if I try to delete the "Event" entity} other than that it was a pretty uneventful build
-I mean all I am doing is the same as the boilerplate was doing, but with my object tree.
+As I have already have a KDVRootEntity I decided to add KDVAbstractEntity and put incepDate up in there. Then I basically manually refactored it. {I will almost ignore the new bugs in Xcode, like it crashes if I try to delete the "Event" entity} other than that it was a pretty uneventful build. I mean all I am doing is the same as the boilerplate was doing, but with my object tree. And as this branch is InitialRootEntityState this merits a commit
+_All this and more goes into test!_
 
+There is that old computer science saying that any code problem can be solved with another layer of abstraction. I am not sure if this is a good or a bad thing, but I did need another layer _down_ not _up_. 
 
+Really Simple. I know that I can get any object into and out of core data, I will likely want to do a test to see what subs are there after awakeFromInsert() or whatnot. I will also want to take a look into the relationships values back to the owner 
+So where root would seem to be the base class its just a subclass of Abstract, and abstract has Sizes, Location, and Graphics. And locations should likely be Plural (let me fix that)
+Root is essentially empty for now _but_ it is the parent class of KDVPerson So architechturally I have a lot of "wiggle Room" if I need it.
+_The actual factual upside of this is that I could just as well went from "Event":Entity to "KDVPerson":Entity in one step!_
+(For clarity and Git's sake it really is better to nibble off these commits in small chunks.)
+ 
 ### Part 4 ###
 Ok As a sense of perspective; I could and may take the previous AbsDataController and make that last ivar test-safe. this would bring my _coverage%_ pretty high. This is amazing because If I had gone any of the Ares/tricorder/lander versions of this I would be much further along and had about zero percent tests. AAMOF let me show you
 • First make a GUI
