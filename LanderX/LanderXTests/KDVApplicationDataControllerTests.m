@@ -12,6 +12,20 @@
 #import <CoreData/CoreData.h>
 #import "KDVApplicationDataController.h"
 
+/**
+Ok here are some proposed tests
+- a different PSK as a _lazy init
+- a thorough breakdown of the init-chain
+- Object-Class
+ - object sub-entities
+ - KDVApplicationDataController
+ - setting the subEntity from here?
+ - testing all values in the SubEntities
+- Possibly Controller Protocol?
+ - might not be needed in this class but used in
+ - SomeVueController <ApplicationDataProtocol>
+- Load / Save / Delete
+*/
 
 @interface KDVApplicationDataControllerTests : XCTestCase
 
