@@ -18,55 +18,38 @@
 @synthesize entityClassName = _entityClassName;
 @synthesize appDatabaseName = _appDatabaseName;
 
-/**
-Ok here is where it gets tricky
-Init Plain, should just be a base init
 
-- (instancetype)initAllUp
-- (instancetype)initAllDefaults
-- (instancetype)initWithModelClass:(NSString *)modelName dbName:(NSString *)dbName appName:(NSString *)appName;
-
-*/
-- (instancetype)init
+- (id)init
 {
   self = [self initWithModelClass:(nil) dbName:(nil) appName:(nil)];
-
-//  [self setAppDatabaseName:(nil)];
-//  [self setEntityClassName:(nil)];
-  return self;
+  return (self);
 }
 
-- (instancetype)initAllUp
+- (id)initAllUp
 {
   self = [self initWithModelClass:(@"NSManagedObject") dbName:(@"LanderX") appName:(@"LanderX")];
-//  if (!self) {
-//    return (nil);
-//  }
-  return self;
+  return (self);
 }
 
-- (instancetype)initAllDefaults
+- (id)initAllDefaults
 {
   self = [self init];
-
   [self setEntityClassName:(@"NSManagedObject")];
   [self setAppDatabaseName:(@"LanderX")];
   return (self);
-  
 }
+
 // Init should fallthrough to here and
 // initAllValues… should be the default
-
+// I can leave this as instancetype it is private or at least not in the public API
 - (instancetype)initWithModelClass:(NSString *)modelName
                             dbName:(NSString *)dbName
                            appName:(NSString *)appName {
   self = [super init];
   [self setEntityClassName:modelName];
   [self setAppDatabaseName:dbName];
-  
   return self;
 }
-
 
 #pragma mark - Fetched results controller
 
@@ -121,18 +104,20 @@ Init Plain, should just be a base init
 }
 
 #pragma mark - Core Data Saving support
-//- (void)saveContext {
-//    NSManagedObjectContext *managedObjectContext = [[self PSK]viewContext];
-//    if (managedObjectContext != nil) {
-//        NSError *error = nil;
-//        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//            abort();
-//        }
-//    }
-//}
+/**
+- (void)saveContext {
+    NSManagedObjectContext *managedObjectContext = [[self PSK]viewContext];
+    if (managedObjectContext != nil) {
+        NSError *error = nil;
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+*/
 
 #pragma mark -
 /**
@@ -156,6 +141,5 @@ Init Plain, should just be a base init
 }
 
 */
-
 
 @end

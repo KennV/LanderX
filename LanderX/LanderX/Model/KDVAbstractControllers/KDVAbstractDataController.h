@@ -47,7 +47,7 @@ The working name for this app's db
 
 //@property (strong, nonatomic) NSArray *miObjects; //(NSMutableArray *)getAllEntities;
 
-- (instancetype)initAllUp;
-- (instancetype)initAllDefaults;
+- (id)initAllUp;
+- (id)initAllDefaults;
 //- (instancetype)initWithModelClass:(NSString *)modelName dbName:(NSString *)dbName appName:(NSString *)appName;
 @end

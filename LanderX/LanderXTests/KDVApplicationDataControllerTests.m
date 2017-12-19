@@ -25,6 +25,7 @@ Ok here are some proposed tests
  - might not be needed in this class but used in
  - SomeVueController <ApplicationDataProtocol>
 - Load / Save / Delete
+- currentEntity()
 */
 
 @interface KDVApplicationDataControllerTests : XCTestCase
