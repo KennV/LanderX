@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */; };
-		3809930A1FE3143D006E8DD2 /* KDVDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380993091FE3143D006E8DD2 /* KDVDataControllerTests.m */; };
+		3809930A1FE3143D006E8DD2 /* KDVAbstractDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 380993091FE3143D006E8DD2 /* KDVAbstractDataControllerTests.m */; };
 		383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */; };
 		383678D51FE0A51F00F5AFD0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383678D41FE0A51F00F5AFD0 /* CoreData.framework */; };
 		385CF51C1FE093ED008B9B37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF51B1FE093ED008B9B37 /* AppDelegate.m */; };
@@ -18,6 +18,8 @@
 		385CF5301FE093ED008B9B37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF52F1FE093ED008B9B37 /* main.m */; };
 		385CF53A1FE093ED008B9B37 /* LanderXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF5391FE093ED008B9B37 /* LanderXTests.m */; };
 		385CF5451FE093ED008B9B37 /* LanderXUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 385CF5441FE093ED008B9B37 /* LanderXUITests.m */; };
+		3877BD131FE9C1FF00A52B43 /* KDVApplicationDataControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877BD121FE9C1FF00A52B43 /* KDVApplicationDataControllerTests.m */; };
+		3877BD161FE9C33D00A52B43 /* KDVApplicationDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3877BD151FE9C33D00A52B43 /* KDVApplicationDataController.m */; };
 		389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */; };
 		389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389B31B81FE095FA00415A18 /* KDVPrimeTVController.m */; };
 		38BB30BC1FE0C33800923A99 /* LanderX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3801E3541FE097C1009E3B31 /* LanderX.xcdatamodeld */; };
@@ -43,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		3801E3551FE097C1009E3B31 /* LanderX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanderX.xcdatamodel; sourceTree = "<group>"; };
-		380993091FE3143D006E8DD2 /* KDVDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KDVDataControllerTests.m; sourceTree = "<group>"; };
+		380993091FE3143D006E8DD2 /* KDVAbstractDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KDVAbstractDataControllerTests.m; sourceTree = "<group>"; };
 		383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KDVAbstractDataController.h; path = Model/KDVAbstractControllers/KDVAbstractDataController.h; sourceTree = "<group>"; };
 		383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KDVAbstractDataController.m; path = Model/KDVAbstractControllers/KDVAbstractDataController.m; sourceTree = "<group>"; };
 		383678D41FE0A51F00F5AFD0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,9 @@
 		385CF5401FE093ED008B9B37 /* LanderXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanderXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		385CF5441FE093ED008B9B37 /* LanderXUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanderXUITests.m; sourceTree = "<group>"; };
 		385CF5461FE093ED008B9B37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3877BD121FE9C1FF00A52B43 /* KDVApplicationDataControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KDVApplicationDataControllerTests.m; sourceTree = "<group>"; };
+		3877BD141FE9C33D00A52B43 /* KDVApplicationDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KDVApplicationDataController.h; path = Model/KDVAbstractControllers/KDVApplicationDataController.h; sourceTree = "<group>"; };
+		3877BD151FE9C33D00A52B43 /* KDVApplicationDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KDVApplicationDataController.m; path = Model/KDVAbstractControllers/KDVApplicationDataController.m; sourceTree = "<group>"; };
 		389B31B31FE095EE00415A18 /* KDVMapDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDVMapDetailViewController.h; sourceTree = "<group>"; };
 		389B31B41FE095EE00415A18 /* KDVMapDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDVMapDetailViewController.m; sourceTree = "<group>"; };
 		389B31B71FE095FA00415A18 /* KDVPrimeTVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDVPrimeTVController.h; sourceTree = "<group>"; };
@@ -145,9 +150,10 @@
 		385CF5381FE093ED008B9B37 /* LanderXTests */ = {
 			isa = PBXGroup;
 			children = (
-				385CF5391FE093ED008B9B37 /* LanderXTests.m */,
-				380993091FE3143D006E8DD2 /* KDVDataControllerTests.m */,
 				385CF53B1FE093ED008B9B37 /* Info.plist */,
+				385CF5391FE093ED008B9B37 /* LanderXTests.m */,
+				380993091FE3143D006E8DD2 /* KDVAbstractDataControllerTests.m */,
+				3877BD121FE9C1FF00A52B43 /* KDVApplicationDataControllerTests.m */,
 			);
 			path = LanderXTests;
 			sourceTree = "<group>";
@@ -159,6 +165,24 @@
 				385CF5461FE093ED008B9B37 /* Info.plist */,
 			);
 			path = LanderXUITests;
+			sourceTree = "<group>";
+		};
+		3877BD171FE9C35C00A52B43 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */,
+				383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		3877BD181FE9C3FD00A52B43 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3877BD141FE9C33D00A52B43 /* KDVApplicationDataController.h */,
+				3877BD151FE9C33D00A52B43 /* KDVApplicationDataController.m */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 		389B31B01FE0943E00415A18 /* ApplicationSupport */ = {
@@ -230,8 +254,8 @@
 		389B31BD1FE0967100415A18 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				383678D01FE0A38000F5AFD0 /* KDVAbstractDataController.h */,
-				383678D11FE0A38000F5AFD0 /* KDVAbstractDataController.m */,
+				3877BD171FE9C35C00A52B43 /* Abstract */,
+				3877BD181FE9C3FD00A52B43 /* Application */,
 			);
 			name = Abstract;
 			sourceTree = "<group>";
@@ -372,6 +396,7 @@
 			files = (
 				3801E3561FE097C1009E3B31 /* LanderX.xcdatamodeld in Sources */,
 				389B31B91FE095FA00415A18 /* KDVPrimeTVController.m in Sources */,
+				3877BD161FE9C33D00A52B43 /* KDVApplicationDataController.m in Sources */,
 				389B31B51FE095EE00415A18 /* KDVMapDetailViewController.m in Sources */,
 				383678D21FE0A38000F5AFD0 /* KDVAbstractDataController.m in Sources */,
 				385CF5301FE093ED008B9B37 /* main.m in Sources */,
@@ -383,8 +408,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3877BD131FE9C1FF00A52B43 /* KDVApplicationDataControllerTests.m in Sources */,
 				38BB30BC1FE0C33800923A99 /* LanderX.xcdatamodeld in Sources */,
-				3809930A1FE3143D006E8DD2 /* KDVDataControllerTests.m in Sources */,
+				3809930A1FE3143D006E8DD2 /* KDVAbstractDataControllerTests.m in Sources */,
 				38BB30BD1FE0C6F600923A99 /* KDVPrimeTVController.m in Sources */,
 				385CF53A1FE093ED008B9B37 /* LanderXTests.m in Sources */,
 			);

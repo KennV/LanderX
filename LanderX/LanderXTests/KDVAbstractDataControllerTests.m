@@ -33,12 +33,12 @@
 #import "KDVAbstractDataController.h"
 
 
-@interface KDVDataControllerTests : XCTestCase
+@interface KDVAbstractDataControllerTests : XCTestCase
 @property (strong, nonatomic)KDVAbstractDataController *SUT;
 @property (strong, nonatomic)NSPersistentContainer *PSK;
 @end
 
-@implementation KDVDataControllerTests
+@implementation KDVAbstractDataControllerTests
 
 @synthesize SUT = _SUT;
 @synthesize PSK = _PSK;
